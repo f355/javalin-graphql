@@ -33,9 +33,13 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 maven_install(
     artifacts = [
         "com.expediagroup:graphql-kotlin-schema-generator:1.3.0",
+        "com.expediagroup:graphql-kotlin-spring-server:1.3.0",
         "io.javalin:javalin:3.5.0",
+        "junit:junit:4.12",
+        "org.slf4j:slf4j-simple:1.7.26",
     ],
     repositories = [
         "http://central.maven.org/maven2/",
     ],
+    fetch_sources = True,
 )

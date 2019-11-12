@@ -1,0 +1,8 @@
+load("@io_bazel_rules_kotlin//kotlin:kotlin.bzl", "kt_jvm_binary")
+
+kt_jvm_binary(
+    name = "local",
+    srcs = ["src/main.kt"],
+    deps = ["//:javalin-graphql"],
+    main_class = "javalin_graphql_example.MainKt",
+)

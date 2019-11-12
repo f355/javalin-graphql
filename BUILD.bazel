@@ -1,15 +1,19 @@
-load("@io_bazel_rules_kotlin//kotlin:kotlin.bzl", "kt_jvm_library")
+load("@io_bazel_rules_kotlin//kotlin:kotlin.bzl", "kt_jvm_library", "kt_jvm_binary")
 
 kt_jvm_library(
     name = "javalin-graphql",
     srcs = glob([
-        "src/main/**/*.kt",
+        "src/main/kotlin/**/*.kt",
     ]),
-    data = glob([
+    resources = glob([
         "src/main/resources/*.*",
+        "src/main/resources/**/*.*",
     ]),
     deps = [
         "@maven//:com_expediagroup_graphql_kotlin_schema_generator",
+        "@maven//:com_graphql_java_graphql_java",
         "@maven//:io_javalin_javalin",
+        "@maven//:org_slf4j_slf4j_simple",
     ],
+    visibility = ["//visibility:public"],
 )
